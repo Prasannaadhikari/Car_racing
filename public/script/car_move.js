@@ -4,6 +4,11 @@ player_car.X=x_position[1];
 var player=false;
 var score=0;
 
+/**
+ * Represents the main play area.
+ * firstly takes the key value for left and right arrow bottom.
+ * initiate the player 
+ */
 function playarea(){
     const start = document.querySelector('.start_menu');
     start.style.display='none';
@@ -24,6 +29,10 @@ function playarea(){
     }
 
     if(player){
+        /**
+         * create the enemeies vehicle
+         * with X and Y coordinate
+         */
         function create_enemies(){
             for (let i=0; i<number_of_cars;i++){
                 let enemies = document.createElement("div");
@@ -42,6 +51,10 @@ function playarea(){
             }
         }
         
+        /**
+         * move the enemies and
+         * detect collision with other car
+        */
         function move_ahead(){
             create_enemies();
             function move_enemies(){
